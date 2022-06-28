@@ -4,6 +4,8 @@ import ThemeProvider from './styles/theme';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import Stack from './navigation';
+import './data-source';
+import 'reflect-metadata';
 
 export default () => (
   <SafeAreaProvider>
