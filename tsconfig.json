@@ -5,6 +5,8 @@
     "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "typeRoots": ["./src/types"]
+    "typeRoots": ["./src/types"],
+    "lib": ["ESNext"],
+    "types": ["node"]
   }
 }

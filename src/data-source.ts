@@ -1,16 +1,16 @@
-import {DataSource} from 'typeorm';
-import {DATABASE_NAME} from '@env';
-import {User} from './entity/User';
+import { DataSource } from 'typeorm';
+import { DATABASE_NAME } from '@env';
+import * as entities from './entities';
 
-export const AppDataSource = new DataSource({
+export const database = new DataSource({
   type: 'react-native',
   location: 'default',
   database: DATABASE_NAME,
   synchronize: true,
   logging: true,
-  entities: [User],
+  entities: Object.values(entities),
   subscribers: [],
   migrations: [],
 });
 
-AppDataSource.initialize();
+database.initialize();
