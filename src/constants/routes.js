@@ -1,3 +1,6 @@
 export const ROUTES = {
   HOME: 'HOME',
+  INVENTORY: 'INVENTORY',
+  RECIPES: 'RECIPES',
+  REPORT: 'REPORT',
 };

@@ -1,36 +1,52 @@
 import React from 'react';
-import { Button, Text } from '@rneui/themed';
-import {} from '@rneui/base';
+import { Button, Text, Image } from '@rneui/themed';
 import { View } from 'react-native';
 import { APP_NAME } from '@env';
-import '../../services/ingredient/query.service';
-import { general } from '../../styles';
 import styles from './styles';
+import { ROUTES } from '../../constants';
+import { PageContainer } from '../../components/';
 
-export const Home = () => {
+export const Home = ({ navigation }) => {
+  const menu = [
+    {
+      label: 'ESTOQUE',
+      page: ROUTES.INVENTORY,
+    },
+    {
+      label: 'RECEITAS',
+      page: ROUTES.RECIPES,
+    },
+    {
+      label: 'RELATÓRIO',
+      page: ROUTES.REPORT,
+    },
+  ];
   return (
-    <View style={general.pageContainer}>
+    <PageContainer>
       <View style={styles.container}>
         <View style={styles.titleContainer}>
-          <View style={styles.titleImage}></View>
+          <Image source={require('../../assets/images/logo.png')} style={styles.titleImage} />
           <Text h1 style={styles.title}>
             {APP_NAME}
           </Text>
         </View>
 
-        <View style={styles.image}>
-          <Text>SOME IMAGE HERE</Text>
-        </View>
-        <Button containerStyle={styles.button.container} buttonStyle={styles.button.button}>
-          ESTOQUE
-        </Button>
-        <Button containerStyle={styles.button.container} buttonStyle={styles.button.button}>
-          RECEITAS
-        </Button>
-        <Button containerStyle={styles.button.container} buttonStyle={styles.button.button}>
-          RELATÓRIO
-        </Button>
+        <Image
+          source={require('../../assets/images/banner.png')}
+          style={styles.image}
+          containerStyle={styles.imageContainer}
+        />
+        {menu.map((item) => (
+          <Button
+            key={`${item.label}-${item.page}`}
+            containerStyle={styles.button.container}
+            buttonStyle={styles.button.button}
+            onPress={() => navigation.navigate(item.page)}
+          >
+            {item.label}
+          </Button>
+        ))}
       </View>
-    </View>
+    </PageContainer>
   );
 };

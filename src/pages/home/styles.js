@@ -13,21 +13,24 @@ export default StyleSheet.create({
   titleImage: {
     width: 65,
     height: 65,
-    backgroundColor: 'black',
   },
   title: {
     textAlign: 'center',
+    fontWeight: 'bold',
   },
   image: {
     width: '100%',
-    height: 300,
-    backgroundColor: 'black',
-    marginBottom: 40,
+    height: 360,
+    resizeMode: 'contain',
+  },
+  imageContainer: {
+    width: '100%',
+    marginBottom: 50,
   },
   button: {
     container: {
       width: '100%',
-      marginBottom: 10,
+      marginBottom: 16,
     },
     button: {
       borderRadius: 0,
