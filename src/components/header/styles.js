@@ -7,6 +7,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 20,
+    backgroundColor: '#ffffff',
   },
   name: {
     textTransform: 'capitalize',

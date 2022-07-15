@@ -1,6 +1,11 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from 'react'
+import { PageContainer, TextFilter } from '../../components'
+import styles from './styles'
 
 export const Inventory = () => {
-  return <View></View>;
-};
+  return (
+    <PageContainer>
+      <TextFilter />
+    </PageContainer>
+  )
+}
